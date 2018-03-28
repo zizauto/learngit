@@ -1,0 +1,81 @@
+jimmy-zizauto 2018-03-28 16:22:00
+
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+
+$ git add readme.txt
+$ git commit -m "append GPL"
+[master 3628164] append GPL
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Version 1£ºwrote a readme file
+
+Git is a version control system.
+Git is free software.
+
+Version 2£ºadd distributed
+
+Git is a distributed version control system.
+Git is free software.
+
+Version 3£ºappend GPL
+
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+
+$ git log
+commit 3628164fb26d48395383f8f31179f24e0882e1e0
+Author: Michael Liao <askxuefeng@gmail.com>
+Date:   Tue Aug 20 15:11:49 2013 +0800
+
+    append GPL
+
+commit ea34578d5496d7dd233c827ed32a8cd576c5ee85
+Author: Michael Liao <askxuefeng@gmail.com>
+Date:   Tue Aug 20 14:53:12 2013 +0800
+
+    add distributed
+
+commit cb926e7ea50ad11b8f9e909c05226233bf755030
+Author: Michael Liao <askxuefeng@gmail.com>
+Date:   Mon Aug 19 17:51:55 2013 +0800
+
+    wrote a readme file
+
+$ git log --pretty=oneline
+3628164fb26d48395383f8f31179f24e0882e1e0 append GPL
+ea34578d5496d7dd233c827ed32a8cd576c5ee85 add distributed
+cb926e7ea50ad11b8f9e909c05226233bf755030 wrote a readme file
+
+$ git reset --hard HEAD^
+HEAD is now at ea34578 add distributed
+
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software.
+
+$ git log
+commit ea34578d5496d7dd233c827ed32a8cd576c5ee85
+Author: Michael Liao <askxuefeng@gmail.com>
+Date:   Tue Aug 20 14:53:12 2013 +0800
+
+    add distributed
+
+commit cb926e7ea50ad11b8f9e909c05226233bf755030
+Author: Michael Liao <askxuefeng@gmail.com>
+Date:   Mon Aug 19 17:51:55 2013 +0800
+
+    wrote a readme file
+
+$ git reset --hard 3628164
+HEAD is now at 3628164 append GPL
+
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+
+$ git reflog
+ea34578 HEAD@{0}: reset: moving to HEAD^
+3628164 HEAD@{1}: commit: append GPL
+ea34578 HEAD@{2}: commit: add distributed
+cb926e7 HEAD@{3}: commit (initial): wrote a readme file
