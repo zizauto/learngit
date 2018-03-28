@@ -1,0 +1,146 @@
+<<<<<<< HEAD
+jimmy-zizauto 2018-03-28 16:22:00
+
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+
+$ git add readme.txt
+$ git commit -m "append GPL"
+[master 3628164] append GPL
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Version 1£ºwrote a readme file
+
+Git is a version control system.
+Git is free software.
+
+Version 2£ºadd distributed
+
+Git is a distributed version control system.
+Git is free software.
+
+Version 3£ºappend GPL
+
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+
+$ git log
+commit 3628164fb26d48395383f8f31179f24e0882e1e0
+Author: Michael Liao <askxuefeng@gmail.com>
+Date:   Tue Aug 20 15:11:49 2013 +0800
+
+    append GPL
+
+commit ea34578d5496d7dd233c827ed32a8cd576c5ee85
+Author: Michael Liao <askxuefeng@gmail.com>
+Date:   Tue Aug 20 14:53:12 2013 +0800
+
+    add distributed
+
+commit cb926e7ea50ad11b8f9e909c05226233bf755030
+Author: Michael Liao <askxuefeng@gmail.com>
+Date:   Mon Aug 19 17:51:55 2013 +0800
+
+    wrote a readme file
+
+$ git log --pretty=oneline
+3628164fb26d48395383f8f31179f24e0882e1e0 append GPL
+ea34578d5496d7dd233c827ed32a8cd576c5ee85 add distributed
+cb926e7ea50ad11b8f9e909c05226233bf755030 wrote a readme file
+
+$ git reset --hard HEAD^
+HEAD is now at ea34578 add distributed
+
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software.
+
+$ git log
+commit ea34578d5496d7dd233c827ed32a8cd576c5ee85
+Author: Michael Liao <askxuefeng@gmail.com>
+Date:   Tue Aug 20 14:53:12 2013 +0800
+
+    add distributed
+
+commit cb926e7ea50ad11b8f9e909c05226233bf755030
+Author: Michael Liao <askxuefeng@gmail.com>
+Date:   Mon Aug 19 17:51:55 2013 +0800
+
+    wrote a readme file
+
+$ git reset --hard 3628164
+HEAD is now at 3628164 append GPL
+
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+
+$ git reflog
+ea34578 HEAD@{0}: reset: moving to HEAD^
+3628164 HEAD@{1}: commit: append GPL
+ea34578 HEAD@{2}: commit: add distributed
+cb926e7 HEAD@{3}: commit (initial): wrote a readme file
+=======
+This file is Note for learngit.
+---------------------------------------
+author:jimmy-zizauto	date:2018-03-28		version:1.0
+
+1.install git
+
+$ git
+The program 'git' is currently not installed. You can install it by typing:
+$ sudo apt-get install git
+
+setting:
+$ git config --global user.name "your name"
+$ git config --global user.email "email@example.com"
+
+create repository:
+$ mkdir learngit
+$ cd learngit
+$ pwd
+/home/jike/working/zizauto/learngit
+$ git init
+Initialized empty Git repository in /home/jike/working/zizauto/learngit/.git/
+
+2.basic operation
+
+$ touch readme.txt
+contents:
+Git is a  distributed version control system.
+Git is free software.
+
+$ git status
+# On branch master
+# Changes not staged for commit:
+#	(use "git add <file>..." to update what will be commited)
+#	(use "git checkout -- <file>..." to discard changes in workding directory)
+#	
+#	modified:	readme.txt
+no changes added to commit (use "git add" and/or "git commit -a")
+
+git diff:
+
+$ git diff readme.txt
+diff --git a/readme.txt b/readme.txt
+index 46d49bf 9247db6 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,2 +1,2 @@
+-Git is a version control system.
++Git is a distributed version control system.
+ Git is free software.
+
+$ git add readme.txt
+$ git status
+$ git commit -m "add distributed"
+[master ea34578] add distributed
+1 file changed,1 insertion(+),1 deletion(-)
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+>>>>>>> e22c67155ce5c9c5c1272d01c3415f194b78cb80
+
+This is jimmycheung modified.
+
+Creating a new branch is quick and simple ,this branch is feature1.
