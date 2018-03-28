@@ -140,3 +140,5 @@ $ git status
 # On branch master
 nothing to commit (working directory clean)
 >>>>>>> e22c67155ce5c9c5c1272d01c3415f194b78cb80
+
+This is jimmycheung modified.
